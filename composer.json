@@ -1,20 +1,15 @@
 {
-    "name": "opis/database",
-    "description": "A database abstraction layer over PDO, that provides a powerful and intuitive query builder, bundled with an easy to use schema builder",
-    "keywords": ["database", "query", "abstraction layer", "mysql", "postgre", "sql", "sqlite",  "query builder", "schema builder"],
-    "homepage": "https://opis.io/database",
-    "license": "Apache-2.0",
+    "name": "rlzdesenv/opis-database",
+    "description": "RLZ Opis Database",
+    "license": "BSD-3-Clause",
+     "type": "library",
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "authors": [
-        {
-            "name": "Marius Sarca",
-            "email": "marius.sarca@gmail.com"
-        },
-        {
-            "name": "Sorin Sarca",
-            "email": "sarca_sorin@hotmail.com"
-        }
+     "authors": [
+    {
+      "name": "RLZ Informática LTDA",
+      "email": "desenvolvimento@rlz.com.br"
+    }
     ],
     "scripts": {
       "test": "vendor/bin/phpunit"
