@@ -29,7 +29,7 @@ class SelectStatement extends BaseStatement
      * @param string|array $tables
      * @param SQLStatement|null $statement
      */
-    public function __construct($tables, SQLStatement $statement = null)
+    public function __construct($tables, ?SQLStatement $statement = null)
     {
         parent::__construct($statement);
 
@@ -46,7 +46,7 @@ class SelectStatement extends BaseStatement
      * @param string|null $database
      * @return SelectStatement
      */
-    public function into(string $table, string $database = null): self
+    public function into(string $table, ?string $database = null): self
     {
         $this->sql->setInto($table, $database);
         return $this;
@@ -83,7 +83,7 @@ class SelectStatement extends BaseStatement
      *
      * @return  $this
      */
-    public function having($column, Closure $value = null): self
+    public function having($column, ?Closure $value = null): self
     {
         $this->have->having($column, $value);
         return $this;
@@ -95,7 +95,7 @@ class SelectStatement extends BaseStatement
      *
      * @return  $this
      */
-    public function andHaving($column, Closure $value = null): self
+    public function andHaving($column, ?Closure $value = null): self
     {
         $this->have->andHaving($column, $value);
         return $this;
@@ -107,7 +107,7 @@ class SelectStatement extends BaseStatement
      *
      * @return  $this
      */
-    public function orHaving($column, Closure $value = null): self
+    public function orHaving($column, ?Closure $value = null): self
     {
         $this->have->orHaving($column, $value);
         return $this;
@@ -119,7 +119,7 @@ class SelectStatement extends BaseStatement
      * @param string|null $nulls
      * @return SelectStatement
      */
-    public function orderBy($columns, string $order = 'ASC', string $nulls = null): self
+    public function orderBy($columns, string $order = 'ASC', ?string $nulls = null): self
     {
         if (!is_array($columns)) {
             $columns = [$columns];

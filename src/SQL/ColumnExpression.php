@@ -41,7 +41,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function column($name, string $alias = null): self
+    public function column($name, ?string $alias = null): self
     {
         $this->sql->addColumn($name, $alias);
         return $this;
@@ -79,7 +79,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function count($column = '*', string $alias = null, bool $distinct = false): self
+    public function count($column = '*', ?string $alias = null, bool $distinct = false): self
     {
         return $this->column((new Expression())->count($column, $distinct), $alias);
     }
@@ -93,7 +93,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function avg($column, string $alias = null, bool $distinct = false): self
+    public function avg($column, ?string $alias = null, bool $distinct = false): self
     {
         return $this->column((new Expression())->avg($column, $distinct), $alias);
     }
@@ -107,7 +107,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function sum($column, string $alias = null, bool $distinct = false): self
+    public function sum($column, ?string $alias = null, bool $distinct = false): self
     {
         return $this->column((new Expression())->sum($column, $distinct), $alias);
     }
@@ -121,7 +121,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function min($column, string $alias = null, bool $distinct = false): self
+    public function min($column, ?string $alias = null, bool $distinct = false): self
     {
         return $this->column((new Expression())->min($column, $distinct), $alias);
     }
@@ -135,7 +135,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function max($column, string $alias = null, bool $distinct = false): self
+    public function max($column, ?string $alias = null, bool $distinct = false): self
     {
         return $this->column((new Expression())->max($column, $distinct), $alias);
     }
@@ -148,7 +148,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function ucase($column, string $alias = null): self
+    public function ucase($column, ?string $alias = null): self
     {
         return $this->column((new Expression())->ucase($column), $alias);
     }
@@ -161,7 +161,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function lcase($column, string $alias = null): self
+    public function lcase($column, ?string $alias = null): self
     {
         return $this->column((new Expression())->lcase($column), $alias);
     }
@@ -176,7 +176,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function mid($column, int $start = 1, string $alias = null, int $length = 0): self
+    public function mid($column, int $start = 1, ?string $alias = null, int $length = 0): self
     {
         return $this->column((new Expression())->mid($column, $start, $length), $alias);
     }
@@ -189,7 +189,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function len($column, string $alias = null): self
+    public function len($column, ?string $alias = null): self
     {
         return $this->column((new Expression())->len($column), $alias);
     }
@@ -203,7 +203,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function round($column, int $decimals = 0, string $alias = null): self
+    public function round($column, int $decimals = 0, ?string $alias = null): self
     {
         return $this->column((new Expression())->format($column, $decimals), $alias);
     }
@@ -217,7 +217,7 @@ class ColumnExpression
      *
      * @return  $this
      */
-    public function format($column, int $format, string $alias = null): self
+    public function format($column, int $format, ?string $alias = null): self
     {
         return $this->column((new Expression())->format($column, $format), $alias);
     }

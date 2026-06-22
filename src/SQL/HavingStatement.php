@@ -31,7 +31,7 @@ class HavingStatement
      * HavingStatement constructor.
      * @param SQLStatement|null $statement
      */
-    public function __construct(SQLStatement $statement = null)
+    public function __construct(?SQLStatement $statement = null)
     {
         if ($statement === null) {
             $statement = new SQLStatement();
@@ -47,7 +47,7 @@ class HavingStatement
      *
      * @return  $this
      */
-    protected function addCondition($column, Closure $value = null, $separator = 'AND'): self
+    protected function addCondition($column, ?Closure $value = null, $separator = 'AND'): self
     {
         if (($column instanceof Closure) && $value === null) {
             $this->sql->addHavingGroupCondition($column, $separator);
@@ -75,7 +75,7 @@ class HavingStatement
      *
      * @return  $this
      */
-    public function having($column, Closure $value = null): self
+    public function having($column, ?Closure $value = null): self
     {
         return $this->addCondition($column, $value, 'AND');
     }
@@ -86,7 +86,7 @@ class HavingStatement
      *
      * @return  $this
      */
-    public function andHaving($column, Closure $value = null): self
+    public function andHaving($column, ?Closure $value = null): self
     {
         return $this->addCondition($column, $value, 'AND');
     }
@@ -97,7 +97,7 @@ class HavingStatement
      *
      * @return  $this
      */
-    public function orHaving($column, Closure $value = null): self
+    public function orHaving($column, ?Closure $value = null): self
     {
         return $this->addCondition($column, $value, 'OR');
     }
